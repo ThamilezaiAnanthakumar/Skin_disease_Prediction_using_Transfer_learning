@@ -6,7 +6,7 @@ This project aims to classify **skin diseases into 8 types** using a machine lea
 - 📷 **Raspberry Pi 4B Device** – Uses a **camera for real-time prediction**, displaying results on the device.
 
 ## 🛠️ Tools & Technologies Used
-- 🤖 **Machine Learning**: TensorFlow, Keras, Transfer Learning (**EfficientNet, MobileNet**)
+- 🤖 **Machine Learning**: TensorFlow, Keras, Transfer Learning (**MobileNet**)
 - 🔧 **Model Optimization**: TensorFlow Lite (**TFLite, 2.4MB model**)
 - 🌍 **Web Development**: Streamlit, Flask (for API backend)
 - 🗄️ **Database**: SQLite / PostgreSQL (for storing patient data)
