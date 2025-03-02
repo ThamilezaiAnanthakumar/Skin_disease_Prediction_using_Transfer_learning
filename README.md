@@ -8,7 +8,7 @@ This project aims to classify **skin diseases into 8 types** using a machine lea
 ## 🛠️ Tools & Technologies Used
 - 🤖 **Machine Learning**: TensorFlow, Keras, Transfer Learning (**MobileNet**)
 - 🔧 **Model Optimization**: TensorFlow Lite (**TFLite, 2.4MB model**)
-- 🌍 **Web Development**: Streamlit, Flask (for API backend)
+- 🌍 **Web Development**: Streamlit, Flask (for API backend-Future)
 - 🗄️ **Database**: SQLite / PostgreSQL (for storing patient data)
 - 📡 **Cloud & Data Handling**: Google Colab, Kaggle API
 - 🏗 **Hardware**: Raspberry Pi 4B, Pi Camera
