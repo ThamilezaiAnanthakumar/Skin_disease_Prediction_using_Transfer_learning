@@ -18,7 +18,7 @@ This project aims to classify **skin diseases into 8 types** using a machine lea
 ```mermaid
 graph TD;
     A[Kaggle Dataset Import] --> B[Train ML Model in Google Colab]
-    B --> C[Optimize Model (TFLite, 2.4MB)]
+    B --> C[Optimize Model TFLite, 2.4MB]
     C --> D1[Streamlit Web App Deployment]
     C --> D2[Raspberry Pi Deployment]
     D1 --> E[Upload Skin Image & Predict]
