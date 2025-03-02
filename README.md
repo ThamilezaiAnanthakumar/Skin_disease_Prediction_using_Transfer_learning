@@ -24,7 +24,6 @@ graph TD;
     D1 --> E[Upload Skin Image & Predict]
     D2 --> F[Pi Camera Real-time Prediction]
     D1 --> G[Store Data & Results in Database]
-    D1 --> H[NLP-based Medical Report Generation]
 ```
 
 ## 🚀 Features
