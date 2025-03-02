@@ -10,7 +10,7 @@ This project aims to classify **skin diseases into 8 types** using a machine lea
 - 🔧 **Model Optimization**: TensorFlow Lite (**TFLite, 2.4MB model**)
 - 🌍 **Web Development**: Streamlit, Flask (for API backend-Future)
 - 🗄️ **Database**: SQLite / PostgreSQL (for storing patient data)
-- 📡 **Cloud & Data Handling**: Google Colab, Kaggle API
+- 📡 **Cloud & Data Handling**: Google Colab, Kaggle HUB
 - 🏗 **Hardware**: Raspberry Pi 4B, Pi Camera
 - 📝 **NLP**: AI-based text generation for **medical report creation**
 
