@@ -25,7 +25,20 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+# Set page configuration
+st.set_page_config(
+    page_title="Skin Disease Prediction",  # Title of the webpage
+    page_icon="🌱",  # Icon for the tab
+    layout="centered",  # Layout setting: "centered" for a more compact design
+)
 
+# Title and description
+st.title("Skin Disease Prediction using Transfer Learning")
+st.markdown("""
+This web application predicts skin diseases based on an image input. 
+The model classifies diseases such as **cellulitis**, **impetigo**, **athlete-foot**, etc.
+Upload a photo of the skin, and the app will predict the disease with a confidence score.
+""")
 # loading the saved models
 
 model = pickle.load(open('skin_disease_model.sav', 'rb'))
@@ -59,4 +72,19 @@ if uploaded_file is not None:
 
     st.write(f"Predicted class: {predicted_class}")
     st.write(f"Confidence: {probability:.2%}")
+
+# Sidebar Menu
+with st.sidebar:
+    option = option_menu(
+        "Menu", ["Home", "About", "Contact"],
+        icons=["house-door", "info-circle", "envelope"],
+        menu_icon="cast", default_index=0
+    )
+
+# Footer Section (Optional)
+st.markdown("""
+    ---
+    Developed with ❤️ by **Your Name**
+    Contact: your-email@example.com
+    """)
 
