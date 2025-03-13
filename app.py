@@ -101,7 +101,7 @@ elif selected == "Contact":
     )
     st.write("- **Email:** thamilezaiananthakumar@gmail.com")
     st.write("- **Phone:** +940762934089")
-    st.write("- **GitHub:** [Skin Disease Prediction](https://github.com/ThamilezaiAnanthakumar)")
+    st.write("- **GitHub:** [Thamilezai Ananthakumar](https://github.com/ThamilezaiAnanthakumar)")
     st.write("- **LinkedIn:** [Thamilezai Ananthakumar](https://www.linkedin.com/in/thamilezai-ananthakumar-387a922a4)")
 
 # Footer
