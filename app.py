@@ -27,9 +27,9 @@ import seaborn as sns
 
 # Set page configuration
 st.set_page_config(
-    page_title="Skin Disease Prediction",  # Title of the webpage
-    page_icon="🌱",  # Icon for the tab
-    layout="centered",  # Layout setting: "centered" for a more compact design
+    page_title="Skin Disease Prediction",
+    page_icon="🩺",
+    layout="wide",
 )
 
 # Title and description
@@ -59,32 +59,53 @@ def predict_disease(image):
   return predicted_class, probability
 
 
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+if selected == "Home":
+    st.title("🩺 Skin Disease Prediction App")
+    st.write(
+        "This web app helps in predicting various skin diseases using a deep learning model. "
+        "Upload a skin image and let the model predict the disease with high accuracy."
+    )
+    
+    uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png"])
+    
+    if uploaded_file is not None:
+        image = Image.open(uploaded_file)
+        st.image(image, caption="Uploaded Image", use_column_width=True)
+        
+        # Prediction
+        predicted_class, probability = predict_disease(image)
+        
+        st.success(f"Predicted Disease: {predicted_class}")
+        st.info(f"Confidence: {probability:.2%}")
 
-if uploaded_file is not None:
-    image = Image.open(uploaded_file)
-    #st.image(image, caption='Uploaded Image.', use_column_width=True)
-    st.image(image, use_container_width=True)
-
-    st.write("")
-
-    predicted_class, probability = predict_disease(image)
-
-    st.write(f"Predicted class: {predicted_class}")
-    st.write(f"Confidence: {probability:.2%}")
-
-# Sidebar Menu
-with st.sidebar:
-    option = option_menu(
-        "Menu", ["Home", "About", "Contact"],
-        icons=["house-door", "info-circle", "envelope"],
-        menu_icon="cast", default_index=0
+# About Section
+elif selected == "About":
+    st.title("📌 About")
+    st.write(
+        "This skin disease prediction app is designed to assist healthcare professionals and individuals "
+        "in identifying common skin diseases. The model is trained on a diverse dataset and can predict "
+        "the following conditions with high accuracy:"
+    )
+    st.write("- Cellulitis\n- Impetigo\n- Athlete's Foot\n- Nail Fungus\n- Ringworm")
+    st.write("- Cutaneous Larva Migrans\n- Chickenpox\n- Shingles\n- Normal Skin")
+    st.write(
+        "This project leverages convolutional neural networks (CNNs) for accurate classification "
+        "and aims to provide quick preliminary analysis, aiding in faster medical intervention."
     )
 
-# Footer Section (Optional)
-st.markdown("""
-    ---
-    Developed with ❤️ by **Your Name**
-    Contact: your-email@example.com
-    """)
+# Contact Section
+elif selected == "Contact":
+    st.title("📞 Contact")
+    st.write(
+        "For inquiries, collaborations, or feedback, please reach out to us through the following channels:" 
+    )
+    st.write("- **Email:** support@skindiseaseapp.com")
+    st.write("- **Phone:** +123 456 7890")
+    st.write("- **GitHub:** [Skin Disease Prediction](https://github.com/your-github-repo)")
+    st.write("- **LinkedIn:** [Your Name](https://www.linkedin.com/in/your-linkedin)")
 
+# Footer
+st.markdown("""
+---
+Developed with ❤️ by Thamilezai Ananthakumar
+""")
