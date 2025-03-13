@@ -99,10 +99,10 @@ elif selected == "Contact":
     st.write(
         "For inquiries, collaborations, or feedback, please reach out to us through the following channels:" 
     )
-    st.write("- **Email:** support@skindiseaseapp.com")
-    st.write("- **Phone:** +123 456 7890")
-    st.write("- **GitHub:** [Skin Disease Prediction](https://github.com/your-github-repo)")
-    st.write("- **LinkedIn:** [Your Name](https://www.linkedin.com/in/your-linkedin)")
+    st.write("- **Email:** thamilezaiananthakumar@gmail.com")
+    st.write("- **Phone:** +940762934089")
+    st.write("- **GitHub:** [Skin Disease Prediction](https://github.com/ThamilezaiAnanthakumar)")
+    st.write("- **LinkedIn:** [Thamilezai Ananthakumar](https://www.linkedin.com/in/thamilezai-ananthakumar-387a922a4)")
 
 # Footer
 st.markdown("""
