@@ -70,7 +70,8 @@ if selected == "Home":
     
     if uploaded_file is not None:
         image = Image.open(uploaded_file)
-        st.image(image, caption="Uploaded Image", use_column_width=True)
+        #st.image(image, caption="Uploaded Image", use_column_width=True)
+        st.image(image, use_container_width=True)
         
         # Prediction
         predicted_class, probability = predict_disease(image)
