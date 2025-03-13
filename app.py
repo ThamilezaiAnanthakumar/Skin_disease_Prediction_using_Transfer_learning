@@ -28,7 +28,7 @@ import seaborn as sns
 
 # loading the saved models
 
-model = pickle.load(open('/content/skin_disease_model.sav', 'rb'))
+model = pickle.load(open('skin_disease_model.sav', 'rb'))
 class_labels = ['cellulitis', 'impetigo', 'athlete-foot', 'nail-fungus', 'ringworm',
                 'cutaneous-larva-migrans', 'chickenpox', 'shingles']
 def preprocess_image(image):
