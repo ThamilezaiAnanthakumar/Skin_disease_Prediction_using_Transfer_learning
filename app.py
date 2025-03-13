@@ -32,13 +32,13 @@ st.set_page_config(
     layout="wide",
 )
 
-# Title and description
-st.title("Skin Disease Prediction using Transfer Learning")
-st.markdown("""
-This web application predicts skin diseases based on an image input. 
-The model classifies diseases such as **cellulitis**, **impetigo**, **athlete-foot**, etc.
-Upload a photo of the skin, and the app will predict the disease with a confidence score.
-""")
+# Sidebar Menu
+with st.sidebar:
+    selected = option_menu(
+        "Menu", ["Home", "About", "Contact"],
+        icons=["house", "info-circle", "envelope"],
+        menu_icon="cast", default_index=0
+    )
 # loading the saved models
 
 model = pickle.load(open('skin_disease_model.sav', 'rb'))
