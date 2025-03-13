@@ -6,3 +6,5 @@ Pillow
 joblib
 matplotlib
 seaborn
+streamlit
+streamlit-option-menu
