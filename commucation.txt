@@ -32,3 +32,52 @@ Traceback (most recent call last):
 FileNotFoundError: [Errno 2] No such file or directory: '/tmp/captured_image.jpg'
 (venv) thamilezai@raspberrypi:~/Desktop/Skin $ 
 
+ warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Starting the skin disease prediction application...
+Capturing image...
+[0:03:52.675652023] [1796]  INFO Camera camera_manager.cpp:327 libcamera v0.4.0+53-29156679
+[0:03:52.722934291] [1799]  WARN RPiSdn sdn.cpp:40 Using legacy SDN tuning - please consider moving SDN inside rpi.denoise
+[0:03:52.724657807] [1799]  WARN RPI vc4.cpp:393 Mismatch between Unicam and CamHelper for embedded data usage!
+[0:03:52.725217948] [1799]  INFO RPI vc4.cpp:447 Registered camera /base/soc/i2c0mux/i2c@1/imx219@10 to Unicam device /dev/media0 and ISP device /dev/media1
+[0:03:52.725261911] [1799]  INFO RPI pipeline_base.cpp:1121 Using configuration file '/usr/share/libcamera/pipeline/rpi/vc4/rpi_apps.yaml'
+Made X/EGL preview window
+Mode selection for 1640:1232:12:P
+    SRGGB10_CSI2P,640x480/0 - Score: 4504.81
+    SRGGB10_CSI2P,1640x1232/0 - Score: 1000
+    SRGGB10_CSI2P,1920x1080/0 - Score: 1541.48
+    SRGGB10_CSI2P,3280x2464/0 - Score: 1718
+    SRGGB8,640x480/0 - Score: 5504.81
+    SRGGB8,1640x1232/0 - Score: 2000
+    SRGGB8,1920x1080/0 - Score: 2541.48
+    SRGGB8,3280x2464/0 - Score: 2718
+[0:03:52.785989105] [1796]  INFO Camera camera.cpp:1202 configuring streams: (0) 1640x1232-YUV420 (1) 1640x1232-SBGGR10_CSI2P
+[0:03:52.786365026] [1799]  INFO RPI vc4.cpp:622 Sensor: /base/soc/i2c0mux/i2c@1/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10 - Selected unicam format: 1640x1232-pBAA
+Mode selection for 3280:2464:12:P
+    SRGGB10_CSI2P,640x480/0 - Score: 10248.8
+    SRGGB10_CSI2P,1640x1232/0 - Score: 6744
+    SRGGB10_CSI2P,1920x1080/0 - Score: 6655.48
+    SRGGB10_CSI2P,3280x2464/0 - Score: 1000
+    SRGGB8,640x480/0 - Score: 11248.8
+    SRGGB8,1640x1232/0 - Score: 7744
+    SRGGB8,1920x1080/0 - Score: 7655.48
+    SRGGB8,3280x2464/0 - Score: 2000
+[0:03:57.924297007] [1796]  INFO Camera camera.cpp:1202 configuring streams: (0) 3280x2464-YUV420 (1) 3280x2464-SBGGR10_CSI2P
+[0:03:57.932116340] [1799]  INFO RPI vc4.cpp:622 Sensor: /base/soc/i2c0mux/i2c@1/imx219@10 - Selected sensor format: 3280x2464-SBGGR10_1X10 - Selected unicam format: 3280x2464-pBAA
+Still capture image received
+Traceback (most recent call last):
+  File "/home/thamilezai/Desktop/Skin/Raspi2.py", line 67, in <module>
+    main()
+  File "/home/thamilezai/Desktop/Skin/Raspi2.py", line 55, in main
+    predicted_class, probability = predict_disease(image)
+                                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/thamilezai/Desktop/Skin/Raspi2.py", line 29, in predict_disease
+    prediction = model.predict(processed_image)
+                 ^^^^^
+NameError: name 'model' is not defined
+
+(eom:1985): EOM-WARNING **: 17:40:09.475: Error loading Peas typelib: Typelib file for namespace 'Peas', version '1.0' not found
+
+
+(eom:1985): EOM-WARNING **: 17:40:09.476: Error loading PeasGtk typelib: Typelib file for namespace 'PeasGtk', version '1.0' not found
+
