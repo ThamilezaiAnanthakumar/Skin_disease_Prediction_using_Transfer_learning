@@ -8,7 +8,7 @@ import tensorflow as tf
 from tensorflow import keras
 
 # Load the saved model
-model = pickle.load(open('skin_disease_model.sav', 'rb'))
+model = pickle.load(open('skin_disease_model_2.tflite', 'rb'))
 
 # Class labels for the skin diseases
 class_labels = ['cellulitis', 'impetigo', 'athlete-foot', 'nail-fungus', 'ringworm',
