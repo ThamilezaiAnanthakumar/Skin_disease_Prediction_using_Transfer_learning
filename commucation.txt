@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/thamilezai/Desktop/Skin/Raspi2.py", line 11, in <module>
+    model = pickle.load(open('skin_disease_model_2.tflite', 'rb'))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_pickle.UnpicklingError: invalid load key, '\x1c'.
+(venv) thamilezai@raspberrypi:~/Desktop/Skin $ 
+
