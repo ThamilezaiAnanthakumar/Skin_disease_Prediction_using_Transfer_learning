@@ -1,4 +1,4 @@
-import pickle
+#import pickle
 import numpy as np
 import cv2
 from PIL import Image
@@ -7,8 +7,13 @@ import io
 import tensorflow as tf
 from tensorflow import keras
 
-# Load the saved model
-model = pickle.load(open('skin_disease_model_2.tflite', 'rb'))
+# Load the TensorFlow Lite model
+interpreter = tf.lite.Interpreter(model_path="skin_disease_model_2.tflite")
+interpreter.allocate_tensors()
+
+# Get model input and output details
+input_details = interpreter.get_input_details()
+output_details = interpreter.get_output_details()
 
 # Class labels for the skin diseases
 class_labels = ['cellulitis', 'impetigo', 'athlete-foot', 'nail-fungus', 'ringworm',
