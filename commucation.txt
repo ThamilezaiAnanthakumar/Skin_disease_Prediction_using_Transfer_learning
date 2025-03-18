@@ -80,4 +80,60 @@ NameError: name 'model' is not defined
 
 
 (eom:1985): EOM-WARNING **: 17:40:09.476: Error loading PeasGtk typelib: Typelib file for namespace 'PeasGtk', version '1.0' not found
+--------------------------------------------------------------------------------------------------------------------------------------------------
+(venv) thamilezai@raspberrypi:~/Desktop/Skin $ python3 Raspi2.py
+/home/thamilezai/Desktop/Skin/venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py:457: UserWarning:     Warning: tf.lite.Interpreter is deprecated and is scheduled for deletion in
+    TF 2.20. Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+Starting the skin disease prediction application...
+Capturing image...
+[0:12:23.170628391] [2358]  INFO Camera camera_manager.cpp:327 libcamera v0.4.0+53-29156679
+[0:12:23.220925516] [2361]  WARN RPiSdn sdn.cpp:40 Using legacy SDN tuning - please consider moving SDN inside rpi.denoise
+[0:12:23.222948739] [2361]  WARN RPI vc4.cpp:393 Mismatch between Unicam and CamHelper for embedded data usage!
+[0:12:23.223676295] [2361]  INFO RPI vc4.cpp:447 Registered camera /base/soc/i2c0mux/i2c@1/imx219@10 to Unicam device /dev/media0 and ISP device /dev/media1
+[0:12:23.223732739] [2361]  INFO RPI pipeline_base.cpp:1121 Using configuration file '/usr/share/libcamera/pipeline/rpi/vc4/rpi_apps.yaml'
+Made X/EGL preview window
+Mode selection for 1640:1232:12:P
+    SRGGB10_CSI2P,640x480/0 - Score: 4504.81
+    SRGGB10_CSI2P,1640x1232/0 - Score: 1000
+    SRGGB10_CSI2P,1920x1080/0 - Score: 1541.48
+    SRGGB10_CSI2P,3280x2464/0 - Score: 1718
+    SRGGB8,640x480/0 - Score: 5504.81
+    SRGGB8,1640x1232/0 - Score: 2000
+    SRGGB8,1920x1080/0 - Score: 2541.48
+    SRGGB8,3280x2464/0 - Score: 2718
+[0:12:23.321470767] [2358]  INFO Camera camera.cpp:1202 configuring streams: (0) 1640x1232-YUV420 (1) 1640x1232-SBGGR10_CSI2P
+[0:12:23.321922248] [2361]  INFO RPI vc4.cpp:622 Sensor: /base/soc/i2c0mux/i2c@1/imx219@10 - Selected sensor format: 1640x1232-SBGGR10_1X10 - Selected unicam format: 1640x1232-pBAA
+Mode selection for 3280:2464:12:P
+    SRGGB10_CSI2P,640x480/0 - Score: 10248.8
+    SRGGB10_CSI2P,1640x1232/0 - Score: 6744
+    SRGGB10_CSI2P,1920x1080/0 - Score: 6655.48
+    SRGGB10_CSI2P,3280x2464/0 - Score: 1000
+    SRGGB8,640x480/0 - Score: 11248.8
+    SRGGB8,1640x1232/0 - Score: 7744
+    SRGGB8,1920x1080/0 - Score: 7655.48
+    SRGGB8,3280x2464/0 - Score: 2000
+[0:12:28.476438280] [2358]  INFO Camera camera.cpp:1202 configuring streams: (0) 3280x2464-YUV420 (1) 3280x2464-SBGGR10_CSI2P
+[0:12:28.478911206] [2361]  INFO RPI vc4.cpp:622 Sensor: /base/soc/i2c0mux/i2c@1/imx219@10 - Selected sensor format: 3280x2464-SBGGR10_1X10 - Selected unicam format: 3280x2464-pBAA
+Still capture image received
+Traceback (most recent call last):
+  File "/home/thamilezai/Desktop/Skin/Raspi2.py", line 78, in <module>
+    main()
+  File "/home/thamilezai/Desktop/Skin/Raspi2.py", line 66, in main
+    predicted_class, probability = predict_disease(image)
+                                   ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/thamilezai/Desktop/Skin/Raspi2.py", line 31, in predict_disease
+    interpreter.set_tensor(input_details[0]['index'], processed_image)
+  File "/home/thamilezai/Desktop/Skin/venv/lib/python3.11/site-packages/tensorflow/lite/python/interpreter.py", line 764, in set_tensor
+    self._interpreter.SetTensor(tensor_index, value)
+ValueError: Cannot set tensor: Got value of type FLOAT64 but expected type FLOAT32 for input 0, name: serving_default_keras_tensor_625:0 
+
+(eom:2552): EOM-WARNING **: 17:48:39.863: Error loading Peas typelib: Typelib file for namespace 'Peas', version '1.0' not found
+
+
+
 
