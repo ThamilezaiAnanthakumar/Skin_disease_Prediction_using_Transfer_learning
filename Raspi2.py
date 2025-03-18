@@ -1,11 +1,9 @@
-#import pickle
 import numpy as np
 import cv2
 from PIL import Image
 import subprocess
 import io
 import tensorflow as tf
-from tensorflow import keras
 
 # Load the TensorFlow Lite model
 interpreter = tf.lite.Interpreter(model_path="skin_disease_model_2.tflite")
@@ -20,16 +18,29 @@ class_labels = ['cellulitis', 'impetigo', 'athlete-foot', 'nail-fungus', 'ringwo
                 'cutaneous-larva-migrans', 'chickenpox', 'shingles']
 
 def preprocess_image(image):
-    img = cv2.resize(np.array(image), (224, 224))  # Resize to match the model's input size
+    # Resize image to match the model's input size (224x224)
+    img = cv2.resize(np.array(image), (224, 224))
     img = img / 255.0  # Normalize the image
     return np.expand_dims(img, axis=0)
 
 def predict_disease(image):
+    # Preprocess the image
     processed_image = preprocess_image(image)
-    prediction = model.predict(processed_image)
-    predicted_class_index = np.argmax(prediction)
+    
+    # Set the input tensor
+    interpreter.set_tensor(input_details[0]['index'], processed_image)
+    
+    # Invoke the interpreter (run inference)
+    interpreter.invoke()
+    
+    # Get the output tensor (predictions)
+    output_data = interpreter.get_tensor(output_details[0]['index'])
+    
+    # Get the predicted class
+    predicted_class_index = np.argmax(output_data)
     predicted_class = class_labels[predicted_class_index]
-    probability = prediction[0][predicted_class_index]
+    probability = output_data[0][predicted_class_index]
+    
     return predicted_class, probability
 
 def capture_image():
