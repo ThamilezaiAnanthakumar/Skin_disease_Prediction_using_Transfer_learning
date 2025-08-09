@@ -12,7 +12,7 @@ This project aims to classify **skin diseases into 8 types** using a machine lea
 - 🗄️ **Database**: SQLite / PostgreSQL (for storing patient data)
 - 📡 **Cloud & Data Handling**: Google Colab, Kaggle HUB
 - 🏗 **Hardware**: Raspberry Pi 4B, Pi Camera
-- 📝 **NLP**: AI-based text generation for **medical report creation**
+
 
 ## 📌 Workflow Diagram
 ```mermaid
@@ -60,10 +60,7 @@ graph LR;
 3️⃣ **Raspberry Pi Deployment**:
    - Load **TFLite model** onto **Raspberry Pi**.
    - Use **Pi Camera for live skin disease detection**.
-4️⃣ **Database Setup**:
-   - Configure **SQLite/PostgreSQL** for patient data storage.
-5️⃣ **NLP Report Generation**:
-   - Implement **AI-generated medical reports**.
+
 
 ## 🎯 Conclusion
 This project enhances **healthcare by providing fast & accurate skin disease detection**, enabling **doctors to analyze patient data efficiently**. Future improvements focus on **better scalability, cloud integration, and real-time medical diagnostics**. 🚀
